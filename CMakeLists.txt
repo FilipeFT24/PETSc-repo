@@ -1,11 +1,11 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(ex81a C)
+project(ex81a CXX)
 
 set(PETSC_DIR "/home/fft/petsc")
 set(PETSC_ARCH "arch-linux-c-debug")
 
-add_executable(${PROJECT_NAME} ex81a.c)
+add_executable(${PROJECT_NAME} ex81a.cpp)
 
 target_include_directories(${PROJECT_NAME} PUBLIC
     "${PETSC_DIR}/include"
@@ -26,3 +26,5 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
     C_STANDARD 99
     C_STANDARD_REQUIRED ON
 )
+
+#https://gitlab.com/petsc/petsc/-/tree/214548ce03bf66e5974d3592a95603a9db2deb99/src
