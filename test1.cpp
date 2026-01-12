@@ -218,7 +218,7 @@ int main(int argc, char** argv){
     PetscFunctionReturn(PETSC_SUCCESS);
 }
 
-// -pc_type fieldsplit -ksp_converged_reason -fieldsplit_pc_type jacobi -ksp_view -A_view -mat_view_nest_sub -malloc_dump -malloc_debug -malloc_dump
+// -ksp_type preonly -pc_type lu -A_view -b_view -x_view -mat_view_nest_sub -malloc_dump -malloc_debug -malloc_dump // REVIEW
 // https://github.com/FilipeFT24/PETSc-repo/blob/master/ex81a.cpp
 // https://gitlab.com/petsc/petsc/-/blob/fccfa4b43f74198ab890b077de64eee091c20710/src/ksp/ksp/tutorials/ex85.c
 // https://gitlab.inria.fr/aerosol/aerosol/-/blob/fft_phd/lib/include/common/SMatrixPETSc.hpp?ref_type=heads

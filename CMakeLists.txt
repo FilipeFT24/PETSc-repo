@@ -1,11 +1,13 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(main CXX)
+project(test CXX)
 
 set(PETSC_DIR "/home/fft/petsc")
 set(PETSC_ARCH "arch-linux-c-debug")
 
-add_executable(${PROJECT_NAME} main.cpp)
+add_executable(${PROJECT_NAME} test2.cpp
+        test2.cpp
+)
 
 target_include_directories(${PROJECT_NAME} PUBLIC
     "${PETSC_DIR}/include"
