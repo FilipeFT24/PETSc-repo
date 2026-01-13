@@ -5,9 +5,7 @@ project(test CXX)
 set(PETSC_DIR "/home/fft/petsc")
 set(PETSC_ARCH "arch-linux-c-debug")
 
-add_executable(${PROJECT_NAME} test2.cpp
-        test2.cpp
-)
+add_executable(${PROJECT_NAME} test2.cpp)
 
 target_include_directories(${PROJECT_NAME} PUBLIC
     "${PETSC_DIR}/include"

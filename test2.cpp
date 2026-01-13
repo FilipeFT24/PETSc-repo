@@ -164,7 +164,7 @@ int main(int argc, char** argv){
     PetscCall(MatSetPreallocationCOO_SubMatrix(A1_col, A1_row, Ai[1]));
     PetscCall(MatSetPreallocationCOO_SubMatrix(A2_col, A2_row, Ai[2]));
     PetscCall(MatSetPreallocationCOO_SubMatrix(A3_col, A3_row, Ai[3]));
-    PetscCall(MatSetPreallocationCOO_SubMatrix(A4_col, A4_row, Ai[4]));
+    //PetscCall(MatSetPreallocationCOO_SubMatrix(A4_col, A4_row, Ai[4]));
     PetscCall(MatSetPreallocationCOO_SubMatrix(A5_col, A5_row, Ai[5]));
     PetscCall(MatSetPreallocationCOO_SubMatrix(A6_col, A6_row, Ai[6]));
     PetscCall(MatSetPreallocationCOO_SubMatrix(A7_col, A7_row, Ai[7]));
@@ -184,7 +184,7 @@ int main(int argc, char** argv){
     PetscCall(MatSetLocal_SubMatrix(nnz[1], 0, 1, A1_val, A));
     PetscCall(MatSetLocal_SubMatrix(nnz[2], 0, 2, A2_val, A));
     PetscCall(MatSetLocal_SubMatrix(nnz[3], 1, 0, A3_val, A));
-    PetscCall(MatSetLocal_SubMatrix(nnz[4], 1, 1, A4_val, A));
+    //PetscCall(MatSetLocal_SubMatrix(nnz[4], 1, 1, A4_val, A));
     PetscCall(MatSetLocal_SubMatrix(nnz[5], 1, 2, A5_val, A));
     PetscCall(MatSetLocal_SubMatrix(nnz[6], 2, 0, A6_val, A));
     PetscCall(MatSetLocal_SubMatrix(nnz[7], 2, 1, A7_val, A));
@@ -237,6 +237,7 @@ int main(int argc, char** argv){
 }
 
 // -ksp_type preonly -pc_type lu -A_view -b_view -x_view -mat_view_nest_sub -malloc_dump -malloc_debug -malloc_dump // REVIEW
+// -ksp_type preonly -pc_type fieldsplit -fieldsplit_pc_type lu -fieldsplit_pc_factor_mat_solver_type mumps -A_view -b_view -x_view -mat_view_nest_sub -malloc_dump -malloc_debug -malloc_dump
 // https://github.com/FilipeFT24/PETSc-repo/blob/master/ex81a.cpp
 // https://gitlab.com/petsc/petsc/-/blob/fccfa4b43f74198ab890b077de64eee091c20710/src/ksp/ksp/tutorials/ex85.c
 // https://gitlab.inria.fr/aerosol/aerosol/-/blob/fft_phd/lib/include/common/SMatrixPETSc.hpp?ref_type=heads
